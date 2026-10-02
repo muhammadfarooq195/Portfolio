@@ -1,3 +1,7 @@
+emailjs.init({
+    publicKey: "D8BRvcPkLml45WbH5"
+});
+
 const menuBtn = document.querySelector(".menu-btn");
 const navLinks = document.querySelector(".nav-links");
 
@@ -13,12 +17,23 @@ navItems.forEach((item) => {
     });
 });
 
+
 const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
-    alert("Thank you! Your message has been received.");
-
-    contactForm.reset();
+    emailjs.sendForm(
+        "service_hh6s05i",
+        "template_xyzrb9a",
+        contactForm
+    )
+    .then(() => {
+        alert("Thank you! Your message has been sent successfully.");
+        contactForm.reset();
+    })
+    .catch((error) => {
+        console.error("EmailJS Error:", error);
+        alert("Sorry! Your message could not be sent.");
+    });
 });

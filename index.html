@@ -472,36 +472,39 @@
 
                 <form class="contact-form" id="contactForm">
 
-                    <div class="form-row">
+    <div class="form-row">
 
-                        <input
-                            type="text"
-                            placeholder="Your Name"
-                            required
-                        >
+        <input
+            type="text"
+            name="name"
+            placeholder="Your Name"
+            required
+        >
 
-                        <input
-                            type="email"
-                            placeholder="Your Email"
-                            required
-                        >
+        <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            required
+        >
 
-                    </div>
+    </div>
 
-                    <textarea
-                        placeholder="Your Message"
-                        rows="6"
-                        required
-                    ></textarea>
+    <textarea
+        name="message"
+        placeholder="Your Message"
+        rows="6"
+        required
+    ></textarea>
 
-                    <button
-                        type="submit"
-                        class="btn primary-btn"
-                    >
-                        Send Message
-                    </button>
+    <button
+        type="submit"
+        class="btn primary-btn"
+    >
+        Send Message
+    </button>
 
-                </form>
+</form>
 
             </div>
 
@@ -532,10 +535,10 @@
 
         </div>
 
-    </footer>
+</footer>
 
-
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script src="script.js"></script>
 
 </body>
 </html>
